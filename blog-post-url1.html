@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img class="logo-pic" src="assests\she-articulates-logo.png">
+        </div>
+        <div class="nav-bar">
+            <h3>Stories</h3>
+            <h3>Pictures</h3>
+            <h3>Subscription</h3>
+        </div>
+    </div>
+    <div class="blog-card">
+        <!-- <div class="blog-card-header">
+          <h2 class="blog-card-title">Trek to Mardi Base Camp</h2>
+          <p class="blog-card-date">Published on March 15, 2023 </p>
+          <p class="blog-card-author">Asmita Poudel </p>
+        </div>
+        <div class="blog-card-body">
+          <img class="blog-card-image" src="assests\m2.jpg" alt="Mardi Himal">
+          <p class="blog-card-excerpt">This is a short excerpt of my blog post. It can be used to give readers a preview of what the post is about.</p>
+        </div> -->
+       
+    </div>
+    <div class="readmore-card">
+        <h3>Read more</h3>
+    </div>
+</body>
+<script>
+    const posts = [
+    {
+    id:1,
+      title: 'Mardi Himal',
+      image:'https://th.bing.com/th/id/R.f2e58bc4daf27f5d53d1951e185a45b1?rik=ad4RtvpT6jhHAQ&pid=ImgRaw&r=0',
+      author: 'Author Name 1',
+      date: 'March 15, 2023',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod orci in quam feugiat, a lacinia ex ultricies. Cras non est non magna sodales tincidunt eu non eros. Mauris ut felis a nunc elementum bibendum.'
+    },
+    {
+        id:2,
+      title: 'Lumbini',
+      author: 'Author Name 2',
+      image:'https://th.bing.com/th/id/R.f2e58bc4daf27f5d53d1951e185a45b1?rik=ad4RtvpT6jhHAQ&pid=ImgRaw&r=0',
+
+      date: 'March 16, 2023',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod orci in quam feugiat, a lacinia ex ultricies. Cras non est non magna sodales tincidunt eu non eros. Mauris ut felis a nunc elementum bibendum.'
+    },
+    {
+        id:3,
+      title: 'Post Title 3',
+      author: 'Author Name 3',
+      image:'https://th.bing.com/th/id/R.f2e58bc4daf27f5d53d1951e185a45b1?rik=ad4RtvpT6jhHAQ&pid=ImgRaw&r=0',
+
+      date: 'March 17, 2023',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod orci in quam feugiat, a lacinia ex ultricies. Cras non est non magna sodales tincidunt eu non eros. Mauris ut felis a nunc elementum bibendum.'
+    }
+  ];
+  
+    function createBlogCard(post) {
+    // Create a div for the blog card
+    const card = document.createElement('div');
+    card.classList.add('blog-card');
+
+    const image = document.createElement("img");
+    image.src = post.image;
+    image.alt = post.title;
+    card.appendChild(image);
+  
+    // Add the post title
+    const title = document.createElement('h2');
+    title.innerText = post.title;
+    card.appendChild(title);
+  
+    // Add the author name
+    const author = document.createElement('p');
+    author.classList.add('author');
+    author.innerText = post.author;
+    card.appendChild(author);
+  
+    // Add the post date
+    const date = document.createElement('p');
+    date.classList.add('date');
+    date.innerText = post.date;
+    card.appendChild(date);
+
+ 
+  
+    // Add the post content
+    const content = document.createElement('p');
+    content.classList.add('content');
+    content.innerText = post.content;
+    card.appendChild(content);
+  
+    // Return the completed blog card
+    return card;
+    }
+    const container = document.querySelector('.blog-card');
+      const post = posts[0];
+      const card = createBlogCard(post);
+      container.appendChild(card);
+
+    const readmore=document.querySelector('.readmore-card');
+    for (let i = 1; i < posts.length; i++) {
+      const post = posts[i];
+      const card = createBlogCard(post);
+      readmore.appendChild(card);
+    }
+    
+</script>
+</html>
